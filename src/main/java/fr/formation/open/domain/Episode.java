@@ -25,7 +25,7 @@ public class Episode implements Serializable {
     private Integer duree;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "episodes", "series" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "episodes", "serie" }, allowSetters = true)
     private Saison saisons;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here

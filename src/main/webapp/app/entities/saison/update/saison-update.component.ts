@@ -22,7 +22,7 @@ export class SaisonUpdateComponent implements OnInit {
   editForm = this.fb.group({
     id: [],
     nom: [],
-    series: [],
+    serie: [],
   });
 
   constructor(
@@ -81,17 +81,17 @@ export class SaisonUpdateComponent implements OnInit {
     this.editForm.patchValue({
       id: saison.id,
       nom: saison.nom,
-      series: saison.series,
+      serie: saison.serie,
     });
 
-    this.seriesSharedCollection = this.serieService.addSerieToCollectionIfMissing(this.seriesSharedCollection, saison.series);
+    this.seriesSharedCollection = this.serieService.addSerieToCollectionIfMissing(this.seriesSharedCollection, saison.serie);
   }
 
   protected loadRelationshipsOptions(): void {
     this.serieService
       .query()
       .pipe(map((res: HttpResponse<ISerie[]>) => res.body ?? []))
-      .pipe(map((series: ISerie[]) => this.serieService.addSerieToCollectionIfMissing(series, this.editForm.get('series')!.value)))
+      .pipe(map((series: ISerie[]) => this.serieService.addSerieToCollectionIfMissing(series, this.editForm.get('serie')!.value)))
       .subscribe((series: ISerie[]) => (this.seriesSharedCollection = series));
   }
 
@@ -100,7 +100,7 @@ export class SaisonUpdateComponent implements OnInit {
       ...new Saison(),
       id: this.editForm.get(['id'])!.value,
       nom: this.editForm.get(['nom'])!.value,
-      series: this.editForm.get(['series'])!.value,
+      serie: this.editForm.get(['serie'])!.value,
     };
   }
 }

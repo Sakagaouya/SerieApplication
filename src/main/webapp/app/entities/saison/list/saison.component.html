@@ -34,7 +34,7 @@
         <tr>
           <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
           <th scope="col"><span jhiTranslate="serieApplicationApp.saison.nom">Nom</span></th>
-          <th scope="col"><span jhiTranslate="serieApplicationApp.saison.series">Series</span></th>
+          <th scope="col"><span jhiTranslate="serieApplicationApp.saison.serie">Serie</span></th>
           <th scope="col"></th>
         </tr>
       </thead>
@@ -45,8 +45,8 @@
           </td>
           <td>{{ saison.nom }}</td>
           <td>
-            <div *ngIf="saison.series">
-              <a [routerLink]="['/serie', saison.series?.id, 'view']">{{ saison.series?.id }}</a>
+            <div *ngIf="saison.serie">
+              <a [routerLink]="['/serie', saison.serie?.id, 'view']">{{ saison.serie?.id }}</a>
             </div>
           </td>
           <td class="text-right">

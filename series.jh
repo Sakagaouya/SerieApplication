@@ -14,7 +14,7 @@ entity Episode {
 }
 
 relationship OneToMany {
-	Serie to Saison{series}
+	Serie to Saison{serie}
 }
 
 relationship OneToMany {

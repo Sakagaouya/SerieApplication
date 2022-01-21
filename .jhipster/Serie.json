@@ -14,7 +14,7 @@
     {
       "relationshipType": "one-to-many",
       "otherEntityName": "saison",
-      "otherEntityRelationshipName": "series",
+      "otherEntityRelationshipName": "serie",
       "relationshipName": "saison"
     }
   ],

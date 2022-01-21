@@ -27,8 +27,8 @@ public class Serie implements Serializable {
     @Column(name = "date_heure_ajout")
     private Instant dateHeureAjout;
 
-    @OneToMany(mappedBy = "series")
-    @JsonIgnoreProperties(value = { "episodes", "series" }, allowSetters = true)
+    @OneToMany(mappedBy = "serie")
+    @JsonIgnoreProperties(value = { "episodes", "serie" }, allowSetters = true)
     private Set<Saison> saisons = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
@@ -78,10 +78,10 @@ public class Serie implements Serializable {
 
     public void setSaisons(Set<Saison> saisons) {
         if (this.saisons != null) {
-            this.saisons.forEach(i -> i.setSeries(null));
+            this.saisons.forEach(i -> i.setSerie(null));
         }
         if (saisons != null) {
-            saisons.forEach(i -> i.setSeries(this));
+            saisons.forEach(i -> i.setSerie(this));
         }
         this.saisons = saisons;
     }
@@ -93,13 +93,13 @@ public class Serie implements Serializable {
 
     public Serie addSaison(Saison saison) {
         this.saisons.add(saison);
-        saison.setSeries(this);
+        saison.setSerie(this);
         return this;
     }
 
     public Serie removeSaison(Saison saison) {
         this.saisons.remove(saison);
-        saison.setSeries(null);
+        saison.setSerie(null);
         return this;
     }
 

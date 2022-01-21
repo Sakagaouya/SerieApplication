@@ -5,11 +5,11 @@ export interface ISaison {
   id?: number;
   nom?: string | null;
   episodes?: IEpisode[] | null;
-  series?: ISerie | null;
+  serie?: ISerie | null;
 }
 
 export class Saison implements ISaison {
-  constructor(public id?: number, public nom?: string | null, public episodes?: IEpisode[] | null, public series?: ISerie | null) {}
+  constructor(public id?: number, public nom?: string | null, public episodes?: IEpisode[] | null, public serie?: ISerie | null) {}
 }
 
 export function getSaisonIdentifier(saison: ISaison): number | undefined {

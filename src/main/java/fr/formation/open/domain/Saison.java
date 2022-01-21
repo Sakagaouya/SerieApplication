@@ -29,7 +29,7 @@ public class Saison implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties(value = { "saisons" }, allowSetters = true)
-    private Serie series;
+    private Serie serie;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -90,16 +90,16 @@ public class Saison implements Serializable {
         return this;
     }
 
-    public Serie getSeries() {
-        return this.series;
+    public Serie getSerie() {
+        return this.serie;
     }
 
-    public void setSeries(Serie serie) {
-        this.series = serie;
+    public void setSerie(Serie serie) {
+        this.serie = serie;
     }
 
-    public Saison series(Serie serie) {
-        this.setSeries(serie);
+    public Saison serie(Serie serie) {
+        this.setSerie(serie);
         return this;
     }
 

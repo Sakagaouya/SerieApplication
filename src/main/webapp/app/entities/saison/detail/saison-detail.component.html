@@ -18,10 +18,10 @@
         <dd>
           <span>{{ saison.nom }}</span>
         </dd>
-        <dt><span jhiTranslate="serieApplicationApp.saison.episodes">Episodes</span></dt>
+        <dt><span jhiTranslate="serieApplicationApp.saison.series">Series</span></dt>
         <dd>
-          <div *ngIf="saison.episodes">
-            <a [routerLink]="['/episode', saison.episodes?.id, 'view']">{{ saison.episodes?.id }}</a>
+          <div *ngIf="saison.series">
+            <a [routerLink]="['/serie', saison.series?.id, 'view']">{{ saison.series?.id }}</a>
           </div>
         </dd>
       </dl>

@@ -22,6 +22,12 @@
         <dd>
           <span>{{ episode.duree }}</span>
         </dd>
+        <dt><span jhiTranslate="serieApplicationApp.episode.saisons">Saisons</span></dt>
+        <dd>
+          <div *ngIf="episode.saisons">
+            <a [routerLink]="['/saison', episode.saisons?.id, 'view']">{{ episode.saisons?.id }}</a>
+          </div>
+        </dd>
       </dl>
 
       <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">

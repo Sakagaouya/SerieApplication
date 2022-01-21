@@ -12,10 +12,10 @@
   ],
   "relationships": [
     {
-      "relationshipType": "one-to-many",
+      "relationshipType": "many-to-one",
       "otherEntityName": "saison",
-      "otherEntityRelationshipName": "episodes",
-      "relationshipName": "saison"
+      "otherEntityRelationshipName": "episode",
+      "relationshipName": "saisons"
     }
   ],
   "entityTableName": "episode",

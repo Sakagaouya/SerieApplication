@@ -20,7 +20,7 @@
       "id": "ID",
       "nom": "Nom",
       "dateHeureAjout": "Date Heure Ajout",
-      "saisons": "Saisons"
+      "saison": "Saison"
     }
   }
 }

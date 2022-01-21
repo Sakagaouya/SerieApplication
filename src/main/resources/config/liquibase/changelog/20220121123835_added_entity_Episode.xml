@@ -20,7 +20,7 @@
             <column name="duree" type="integer">
                 <constraints nullable="true" />
             </column>
-            <column name="saisons_id" type="bigint">
+            <column name="saison_id" type="bigint">
                 <constraints nullable="true" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->

@@ -48,12 +48,12 @@ describe('Episode Management Update Component', () => {
   describe('ngOnInit', () => {
     it('Should call Saison query and add missing value', () => {
       const episode: IEpisode = { id: 456 };
-      const saisons: ISaison = { id: 78687 };
-      episode.saisons = saisons;
+      const saison: ISaison = { id: 78687 };
+      episode.saison = saison;
 
       const saisonCollection: ISaison[] = [{ id: 47537 }];
       jest.spyOn(saisonService, 'query').mockReturnValue(of(new HttpResponse({ body: saisonCollection })));
-      const additionalSaisons = [saisons];
+      const additionalSaisons = [saison];
       const expectedCollection: ISaison[] = [...additionalSaisons, ...saisonCollection];
       jest.spyOn(saisonService, 'addSaisonToCollectionIfMissing').mockReturnValue(expectedCollection);
 
@@ -67,14 +67,14 @@ describe('Episode Management Update Component', () => {
 
     it('Should update editForm', () => {
       const episode: IEpisode = { id: 456 };
-      const saisons: ISaison = { id: 27148 };
-      episode.saisons = saisons;
+      const saison: ISaison = { id: 27148 };
+      episode.saison = saison;
 
       activatedRoute.data = of({ episode });
       comp.ngOnInit();
 
       expect(comp.editForm.value).toEqual(expect.objectContaining(episode));
-      expect(comp.saisonsSharedCollection).toContain(saisons);
+      expect(comp.saisonsSharedCollection).toContain(saison);
     });
   });
 

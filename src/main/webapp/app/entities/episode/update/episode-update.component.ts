@@ -23,7 +23,7 @@ export class EpisodeUpdateComponent implements OnInit {
     id: [],
     nom: [],
     duree: [],
-    saisons: [],
+    saison: [],
   });
 
   constructor(
@@ -83,17 +83,17 @@ export class EpisodeUpdateComponent implements OnInit {
       id: episode.id,
       nom: episode.nom,
       duree: episode.duree,
-      saisons: episode.saisons,
+      saison: episode.saison,
     });
 
-    this.saisonsSharedCollection = this.saisonService.addSaisonToCollectionIfMissing(this.saisonsSharedCollection, episode.saisons);
+    this.saisonsSharedCollection = this.saisonService.addSaisonToCollectionIfMissing(this.saisonsSharedCollection, episode.saison);
   }
 
   protected loadRelationshipsOptions(): void {
     this.saisonService
       .query()
       .pipe(map((res: HttpResponse<ISaison[]>) => res.body ?? []))
-      .pipe(map((saisons: ISaison[]) => this.saisonService.addSaisonToCollectionIfMissing(saisons, this.editForm.get('saisons')!.value)))
+      .pipe(map((saisons: ISaison[]) => this.saisonService.addSaisonToCollectionIfMissing(saisons, this.editForm.get('saison')!.value)))
       .subscribe((saisons: ISaison[]) => (this.saisonsSharedCollection = saisons));
   }
 
@@ -103,7 +103,7 @@ export class EpisodeUpdateComponent implements OnInit {
       id: this.editForm.get(['id'])!.value,
       nom: this.editForm.get(['nom'])!.value,
       duree: this.editForm.get(['duree'])!.value,
-      saisons: this.editForm.get(['saisons'])!.value,
+      saison: this.editForm.get(['saison'])!.value,
     };
   }
 }

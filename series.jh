@@ -18,5 +18,5 @@ relationship OneToMany {
 }
 
 relationship OneToMany {
-	Saison to Episode{saisons}
+	Saison to Episode{saison}
 }

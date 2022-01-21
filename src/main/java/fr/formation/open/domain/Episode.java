@@ -26,7 +26,7 @@ public class Episode implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties(value = { "episodes", "serie" }, allowSetters = true)
-    private Saison saisons;
+    private Saison saison;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -69,16 +69,16 @@ public class Episode implements Serializable {
         this.duree = duree;
     }
 
-    public Saison getSaisons() {
-        return this.saisons;
+    public Saison getSaison() {
+        return this.saison;
     }
 
-    public void setSaisons(Saison saison) {
-        this.saisons = saison;
+    public void setSaison(Saison saison) {
+        this.saison = saison;
     }
 
-    public Episode saisons(Saison saison) {
-        this.setSaisons(saison);
+    public Episode saison(Saison saison) {
+        this.setSaison(saison);
         return this;
     }
 

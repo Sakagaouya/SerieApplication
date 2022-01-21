@@ -15,7 +15,7 @@
       "relationshipType": "many-to-one",
       "otherEntityName": "saison",
       "otherEntityRelationshipName": "episode",
-      "relationshipName": "saisons"
+      "relationshipName": "saison"
     }
   ],
   "entityTableName": "episode",

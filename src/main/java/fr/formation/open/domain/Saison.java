@@ -23,8 +23,8 @@ public class Saison implements Serializable {
     @Column(name = "nom")
     private String nom;
 
-    @OneToMany(mappedBy = "saisons")
-    @JsonIgnoreProperties(value = { "saisons" }, allowSetters = true)
+    @OneToMany(mappedBy = "saison")
+    @JsonIgnoreProperties(value = { "saison" }, allowSetters = true)
     private Set<Episode> episodes = new HashSet<>();
 
     @ManyToOne
@@ -65,10 +65,10 @@ public class Saison implements Serializable {
 
     public void setEpisodes(Set<Episode> episodes) {
         if (this.episodes != null) {
-            this.episodes.forEach(i -> i.setSaisons(null));
+            this.episodes.forEach(i -> i.setSaison(null));
         }
         if (episodes != null) {
-            episodes.forEach(i -> i.setSaisons(this));
+            episodes.forEach(i -> i.setSaison(this));
         }
         this.episodes = episodes;
     }
@@ -80,13 +80,13 @@ public class Saison implements Serializable {
 
     public Saison addEpisode(Episode episode) {
         this.episodes.add(episode);
-        episode.setSaisons(this);
+        episode.setSaison(this);
         return this;
     }
 
     public Saison removeEpisode(Episode episode) {
         this.episodes.remove(episode);
-        episode.setSaisons(null);
+        episode.setSaison(null);
         return this;
     }
 

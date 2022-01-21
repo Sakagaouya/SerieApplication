@@ -1,5 +1,6 @@
 package fr.formation.open.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import java.time.Instant;
 import javax.persistence.*;
@@ -23,6 +24,10 @@ public class Serie implements Serializable {
 
     @Column(name = "date_heure_ajout")
     private Instant dateHeureAjout;
+
+    @ManyToOne
+    @JsonIgnoreProperties(value = { "series", "episodes" }, allowSetters = true)
+    private Saison saisons;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -63,6 +68,19 @@ public class Serie implements Serializable {
 
     public void setDateHeureAjout(Instant dateHeureAjout) {
         this.dateHeureAjout = dateHeureAjout;
+    }
+
+    public Saison getSaisons() {
+        return this.saisons;
+    }
+
+    public void setSaisons(Saison saison) {
+        this.saisons = saison;
+    }
+
+    public Serie saisons(Saison saison) {
+        this.setSaisons(saison);
+        return this;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here

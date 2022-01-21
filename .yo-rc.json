@@ -43,8 +43,8 @@
     "clientThemeVariant": "",
     "reactive": false,
     "enableGradleEnterprise": false,
-    "entities": ["Serie"],
-    "lastLiquibaseTimestamp": 1642764566000
+    "entities": ["Serie", "Saison", "Episode"],
+    "lastLiquibaseTimestamp": 1642768715000
   },
   "git-provider": "GitHub",
   "git-company": "Sakagaouya",

@@ -20,7 +20,7 @@
       "id": "ID",
       "nom": "Nom",
       "episode": "Episode",
-      "series": "Series"
+      "serie": "Serie"
     }
   }
 }

@@ -19,14 +19,14 @@
         </div>
 
         <div class="form-group">
-          <label class="form-control-label" jhiTranslate="serieApplicationApp.saison.episodes" for="field_episodes">Episodes</label>
-          <select class="form-control" id="field_episodes" data-cy="episodes" name="episodes" formControlName="episodes">
+          <label class="form-control-label" jhiTranslate="serieApplicationApp.saison.series" for="field_series">Series</label>
+          <select class="form-control" id="field_series" data-cy="series" name="series" formControlName="series">
             <option [ngValue]="null"></option>
             <option
-              [ngValue]="episodeOption.id === editForm.get('episodes')!.value?.id ? editForm.get('episodes')!.value : episodeOption"
-              *ngFor="let episodeOption of episodesSharedCollection; trackBy: trackEpisodeById"
+              [ngValue]="serieOption.id === editForm.get('series')!.value?.id ? editForm.get('series')!.value : serieOption"
+              *ngFor="let serieOption of seriesSharedCollection; trackBy: trackSerieById"
             >
-              {{ episodeOption.id }}
+              {{ serieOption.id }}
             </option>
           </select>
         </div>

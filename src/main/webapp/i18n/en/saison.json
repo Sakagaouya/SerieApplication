@@ -19,8 +19,8 @@
       },
       "id": "ID",
       "nom": "Nom",
-      "serie": "Serie",
-      "episodes": "Episodes"
+      "episode": "Episode",
+      "series": "Series"
     }
   }
 }
